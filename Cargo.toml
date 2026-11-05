@@ -1,0 +1,11 @@
+[package]
+name = "russhpit"
+version = "0.1.0"
+edition = "2024"
+description = "A Rust port of the Endlessh SSH tarpit"
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+libc = "0.2"
+rustix = { version = "1", features = ["std", "net", "event", "fs", "time"] }
