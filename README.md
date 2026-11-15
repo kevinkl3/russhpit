@@ -35,6 +35,19 @@ Use the client's interrupt key to close the test connection.
 Many systems reserve port `22` for privileged processes.
 Use the system's service or packet-filter configuration if russhpit must listen on that port.
 
+## Container tests
+
+The container tests use Debian 12 and Fedora 42 for glibc.
+They use Alpine 3.22 for musl.
+Each image runs the Rust tests and an OpenSSH smoke test.
+
+```console
+sh scripts/test-linux-libcs.sh
+```
+
+The first run requires Docker and network access.
+The images share Docker's Linux kernel, so these tests do not test different kernels.
+
 ## Usage
 
 ```text
